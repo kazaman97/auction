@@ -19,9 +19,9 @@
 </p>
 
 <p>
-  <img src="<%= @item.image_url %>">
+  <%= image_tag @item.image_url %>
   <!-- rubyの時はrubyコマンドを入れる -->
 </p>
-<a href="/items/<%= @item.id %>/edit">編集する</a>
-<a href="/items/<%= @item.id %>" data-method="delete">削除する</a>
+<%= link_to "編集する", edit_item_path(@item) %>
+<%= link_to "削除する", item_path(@item), method: :delete %>
 <a href="/items">一覧へ戻る</a>
